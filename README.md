@@ -36,22 +36,22 @@
 ```bash
 pip install -r requirements.txt
 
-2. 数据集准备与压缩
-本项目使用的天气数据集来源于 Kaggle 开源的 [Weather Image Recognition](https://www.kaggle.com/datasets/jehanbhathena/weather-dataset) （你可以替换成你实际下载的来源链接）。
+### 2. 数据集准备与压缩
+本项目使用的天气数据集来源于 Kaggle 开源的 [Weather Image Recognition](https://www.kaggle.com/datasets/jehanbhathena/weather-dataset) 。
 - 数据集包含 11 类天气，共 13724 张图片。
 - 请下载并解压后，将其重命名为 `dataset`，放置在项目根目录下。
 - 然后运行 `python compress_dataset.py` 自动进行数据压缩（将生成 92MB 的 `dataset_small` 目录）。
 
-3. 模型训练与评估
-bash
+### 3. 模型训练与评估
+```bash
 python train.py
 (会自动保存最佳模型 best_model.pdparams、混淆矩阵图片以及训练曲线)
 
-4. 单图预测测试
-bash
+### 4. 单图预测测试
+```bash
 python predict.py --image path/to/your/image.jpg
 
-5. 启动 Web 可视化界面
-bash
+### 5. 启动 Web 可视化界面
+```bash
 python app.py
 启动后，在浏览器中打开 http://127.0.0.1:7860 即可体验实时天气分类。
