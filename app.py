@@ -49,8 +49,15 @@ def load_model():
     if not os.path.exists('best_model.pdparams'):
         raise FileNotFoundError("找不到 best_model.pdparams，请先训练")
 
-    with open('label_encoder.pkl', 'rb') as f:
-        ENC = pickle.load(f)
+    # 如果本地有pkl就用本地的，如果没有就手动创建
+    if os.path.exists('label_encoder.pkl'):
+        with open('label_encoder.pkl', 'rb') as f:
+            ENC = pickle.load(f)
+    else:
+        from sklearn import preprocessing
+        classes = ['dew', 'fogsmog', 'frost', 'glaze', 'hail', 'lightning', 
+                   'rain', 'rainbow', 'rime', 'sandstorm', 'snow']
+        ENC = preprocessing.LabelEncoder().fit(classes)
 
     MODEL = build_model(num_classes=len(ENC.classes_))
     MODEL.set_state_dict(paddle.load('best_model.pdparams'))
