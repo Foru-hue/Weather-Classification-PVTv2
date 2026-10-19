@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+dataset/
+dataset_small/
+*.pdparams
+*.pkl
+.DS_Store
+venv/
