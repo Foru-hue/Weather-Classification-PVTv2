@@ -18,9 +18,9 @@
 
 ## 🖼️ 界面展示
 
-![训练曲线](images/training_curves.png)
-![混淆矩阵](images/confusion_matrix.png)
-![Web演示](images/web_demo.png)
+![训练曲线](training_curves.png)
+![混淆矩阵](confusion_matrix.png)
+![Web演示](web_demo.png)
 
 ## 🚀 快速开始
 
